@@ -1,6 +1,6 @@
 # 📊 TCS Stock Market Time Series Analysis & Dashboard
 
-This project focuses on analyzing and forecasting the stock price movements of **Tata Consultancy Services (TCS)** using **time series analysis**. It includes feature engineering, model building (LSTM), visual dashboards using **Power BI**, and a Streamlit-based web dashboard.
+This project focuses on analyzing and forecasting the stock price movements of **Tata Consultancy Services (TCS)** using **time series analysis**. It includes feature engineering, model building (LSTM,ARIMA,SARIMA,PROPHET), visual dashboards using **Power BI**, and a Streamlit-based web dashboard.
 
 ---
 
@@ -9,7 +9,7 @@ This project focuses on analyzing and forecasting the stock price movements of *
 - **Goal**: To understand, visualize, and forecast TCS stock performance using machine learning and interactive dashboards.
 - **Tools Used**:
   - Python (Pandas, NumPy, Matplotlib, Seaborn)
-  - Machine Learning (LSTM)
+  - Machine Learning (LSTM,ARIMA,SARIMA,PROPHET)
   - Power BI (for data dashboarding)
   - Streamlit (for web-based app)
   - GitHub (for version control)
@@ -48,8 +48,8 @@ This dataset is locally prepared and includes the following columns:
 - Handled scaling using MinMaxScaler
 - Converted data into supervised format for model input
 
-### 🤖 2. Model Building (LSTM)
-- Built an LSTM model for price forecasting
+### 🤖 2. Model Building (LSTM,ARIMA,SARIMA,PROPHET)
+- Built an LSTM,ARIMA,SARIMA,PROPHET models for price forecasting
 - Trained and evaluated on TCS closing prices
 - Metrics used:
   - MAE, MSE, RMSE, MAPE, R²
