@@ -1,78 +1,79 @@
-# Iris Flower Classification
-## Author
-- [Shivaram Ponnam](https://github.com/shivaram245)
+# 📊 TCS Stock Market Time Series Analysis & Dashboard
 
-## Project Link
-- [GitHub Repository](https://github.com/shivaram245/Iris-Flower-Classification.git)
+This project focuses on analyzing and forecasting the stock price movements of **Tata Consultancy Services (TCS)** using **time series analysis**. It includes feature engineering, model building (LSTM), visual dashboards using **Power BI**, and a Streamlit-based web dashboard.
 
 ---
 
-## Problem Statement
+## 🧾 Project Summary
 
-The iris flower, scientifically known as Iris, is a distinctive genus of flowering plants. Within this genus, there are three primary species: Iris setosa, Iris versicolor, and Iris virginica. These species exhibit variations in their physical characteristics, particularly in the measurements of their sepal length, sepal width, petal length, and petal width.
-
-**Objective:**
-
-The objective of this project is to develop a machine learning model capable of learning from the measurements of iris flowers and accurately classifying them into their respective species. The model's primary goal is to automate the classification process based on the distinct characteristics of each iris species.
-
-**Project Details:**
-
-- **Iris Species:** The dataset consists of iris flowers, specifically from the species setosa, versicolor, and virginica.
-- **Key Measurements:** The essential characteristics used for classification include sepal length, sepal width, petal length, and petal width.
-- **Machine Learning Model:** The project involves the creation and training of a machine learning model to accurately classify iris flowers based on their measurements.
-
-This project's significance lies in its potential to streamline and automate the classification of iris species, which can have broader applications in botany, horticulture, and environmental monitoring.
+- **Goal**: To understand, visualize, and forecast TCS stock performance using machine learning and interactive dashboards.
+- **Tools Used**:
+  - Python (Pandas, NumPy, Matplotlib, Seaborn)
+  - Machine Learning (LSTM)
+  - Power BI (for data dashboarding)
+  - Streamlit (for web-based app)
+  - GitHub (for version control)
 
 ---
 
-## Project Summary
+## 📁 Dataset Info
+TCS.NS Dataset
 
-**Project Description:**
+This dataset is locally prepared and includes the following columns:
 
-The Iris Flower Classification project focuses on developing a machine learning model to classify iris flowers into their respective species based on specific measurements. Iris flowers are classified into three species: setosa, versicolor, and virginica, each of which exhibits distinct characteristics in terms of measurements.
+| Column Name           | Description                        |
+|-----------------------|------------------------------------|
+| Tata Open             | Opening stock price                |
+| Tata High             | Highest price of the day           |
+| Tata Low              | Lowest price of the day            |
+| Tata Close            | Closing price                      |
+| Tata Adj Close        | Adjusted closing price             |
+| Tata Volume           | Trading volume                     |
+| Daily Return %        | Daily percentage return            |
+| MA_10                 | 10-day moving average              |
+| MA_30                 | 30-day moving average              |
+| Volatility_10         | 10-day rolling volatility          |
+| Date                  | Transaction date                   |
 
-**Objective:**
+> ✅ Feature engineering was performed manually to derive `Daily Return %`, `MA_10`, `MA_30`, and `Volatility_10`.
 
-The primary goal of this project is to leverage machine learning techniques to build a classification model that can accurately identify the species of iris flowers based on their measurements. The model aims to automate the classification process, offering a practical solution for identifying iris species.
+---
 
-**Key Project Details:**
+## ⚙️ Steps Followed
 
-- Iris flowers have three species: setosa, versicolor, and virginica.
-- These species can be distinguished based on measurements such as sepal length, sepal width, petal length, and petal width.
-- The project involves training a machine learning model on a dataset that contains iris flower measurements associated with their respective species.
-- The trained model will classify iris flowers into one of the three species based on their measurements.
+### 🔍 1. Data Preprocessing
+- Checked for missing values and dropped empty columns
+- Removed duplicates
+- Extracted `Day`, `Month`, `Year`, `Quarter` from `Date` column
+- Handled scaling using MinMaxScaler
+- Converted data into supervised format for model input
+
+### 🤖 2. Model Building (LSTM)
+- Built an LSTM model for price forecasting
+- Trained and evaluated on TCS closing prices
+- Metrics used:
+  - MAE, MSE, RMSE, MAPE, R²
+
+### 📊 3. Power BI Dashboard
+- Built a report using:
+  - KPI Cards (Open, Close, High, Low, Return %, Volatility)
+  - Line charts for price and volume
+  - Forecast vs Actual visualization
+
+### 🖥️ 4. Streamlit Dashboard (In Progress)
+- KPIs and visual charts designed
+- Local dashboard working via `streamlit run app.py`
+- Deployment pending final fixes
 
 ---
 
-## Results
+### ⚡ Prerequisites
 
-I have selected recall as the primary evaluation metric for the Iris Flower Classification model. And after removing the overfitted models which have recall, precision, f1 scores for train as 100%, we get the final list:
+Install required packages:
 
-| Sl. No. | Classification Model      |   Recall Train (%) |   Recall Test (%) |
-|:--------|:--------------------------|---------------:|--------------:|
-|    1    | Decision Tree tuned       |       95.24  |      95.56 |
-|    2    | Random Forest tuned       |       97.14  |      97.78 |
-|    3    | Naive Bayes               |       94.28 |      97.78 |
-|    4    | Naive Bayes tuned         |       94.28 |      97.78 |
-
-## Conclusion
-
-In the Iris flower classification project, the tuned Random Forest model has been selected as the final prediction model. The project aimed to classify Iris flowers into three distinct species: Iris-Setosa, Iris-Versicolor, and Iris-Virginica. After extensive data exploration, preprocessing, and model evaluation, the following conclusions can be drawn:
-
-1. **Data Exploration:** Through a thorough examination of the dataset, we gained insights into the characteristics and distributions of features. We found that Iris-Setosa exhibited distinct features compared to the other two species.
-
-2. **Data Preprocessing:** Data preprocessing steps, including handling missing values and encoding categorical variables, were performed to prepare the dataset for modeling.
-
-3. **Model Selection:** After experimenting with various machine learning models, tuned Random Forest was chosen as the final model due to its simplicity, interpretability, and good performance in classifying Iris species.
-
-4. **Model Training and Evaluation:** The Random Forest (tuned) model was trained on the training dataset and evaluated using appropriate metrics. The model demonstrated satisfactory accuracy and precision in classifying Iris species.
-
-5. **Challenges and Future Work:** The project encountered challenges related to feature engineering and model fine-tuning. Future work may involve exploring more advanced modeling techniques to improve classification accuracy further.
-
-6. **Practical Application:** The Iris flower classification model can be applied in real-world scenarios, such as botany and horticulture, to automate the identification of Iris species based on physical characteristics.
-
-In conclusion, the Iris flower classification project successfully employed Random Forest (tuned) as the final prediction model to classify Iris species. The project's outcomes have practical implications in the field of botany and offer valuable insights into feature importance for species differentiation. Further refinements and enhancements may lead to even more accurate and reliable classification models in the future.
+```bash
+pip install -r requirements.txt
 
 
----
+
 
