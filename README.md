@@ -12,7 +12,7 @@ This project focuses on analyzing and forecasting the stock price movements of *
   - Machine Learning (LSTM,ARIMA,SARIMA,PROPHET)
   - Power BI (for data dashboarding)
   - Streamlit (for web-based app)
-  - GitHub (for version control)
+  
 
 ---
 
